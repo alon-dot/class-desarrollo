@@ -1,8 +1,25 @@
-export default function App() {
-  return(
-    <>
-    <h1 className="text-center text-3xl font-bold">Mi proyecto Integrador</h1>
-    </>
-  )
-  
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Homes from './pages/Homes';
+import Logins from './pages/Logins';
+import Registros from './pages/Registros';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Homes />,
+  },
+  {
+    path: '/login',
+    element: <Logins />,
+  },
+  {
+    path: '/registro',
+    element: <Registros />,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
+
+export default App;
